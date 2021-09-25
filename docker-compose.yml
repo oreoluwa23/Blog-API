@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  app:
+    container_name: springboot-docker-blog2
+    image: springboot-docker
+    ports:
+      - "8080:8080"
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/blogApi
+#      SPRING_DATASOURCE_USERNAME: "postgres"
+#      SPRING_DATASOURCE_PASSWORD: "12345678"
+#    build:
+#      context: "./"
+#      dockerfile: "Dockerfile"
+    depends_on:
+      - postgresql
+
+  postgresql:
+    image: postgres
+    ports:
+      - "5432"
+    environment:
+      - POSTGRES_PASSWORD=12345678
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=blogApi
+
+
+
+
+
+
