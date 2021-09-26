@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   app:
-    container_name: springboot-docker-blog2
+    container_name: springboot-docker-blog
     image: springboot-docker
     ports:
       - "8080:8080"
